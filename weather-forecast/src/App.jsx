@@ -1,13 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  console.log("teste1 " + import.meta.env.VITE_API_KEY)
+  const apiKey = import.meta.env.VITE_API_KEY
+  console.log("teste2 " + apiKey)
 
   return (
     <>
+    <button className="btn btn-primary">Teste</button>
     </>
   )
 }
