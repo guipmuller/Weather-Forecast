@@ -9,7 +9,7 @@ const useFetch = () => {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((location) => {
       
-      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${location.coords.latitude}&lon=${location.coords.longitude}&appid=${APIKey}`;
+      const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${location.coords.latitude}&lon=${location.coords.longitude}&appid=${APIKey}&units=metric`;
       
       fetch(url)
         .then((res) => res.json())
