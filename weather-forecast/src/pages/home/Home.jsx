@@ -1,6 +1,8 @@
+// Hooks
 import useFetch from "../../hooks/useFetch";
 import useFetchName from "../../hooks/useFetchName";
-
+// Components
+import Hourly from "../../components/hourly/Hourly";
 
 const Home = () => {
   const { data, loading, error } = useFetch();
@@ -10,13 +12,12 @@ const Home = () => {
   return (
     <div>
       {error && <div>{error}</div>}
-  
-     {dataName && (
-      <div>
-        <p>Nome: {dataName.name}</p>
-      </div>
-     )
-     }
+
+      {dataName && (
+        <div>
+          <p>Nome: {dataName.name}</p>
+        </div>
+      )}
 
       {data && (
         <div>
@@ -31,6 +32,11 @@ const Home = () => {
           }
         </div>
       )}
+
+{/* Modal */}
+      <Hourly 
+      data={data} />
+
     </div>
   );
 };
