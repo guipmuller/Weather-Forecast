@@ -1,5 +1,6 @@
 import useFetch from "../../hooks/useFetch";
 import TempConverter from "../../helpers/TempConverter";
+import Search from "../../components/search/Search";
 
 const Home = () => {
   const { data, loading, error } = useFetch();
@@ -15,12 +16,13 @@ const Home = () => {
               <p>Temp: {TempConverter(data.main.temp)}°C</p>
               <p>Temp Max: {TempConverter(data.main.temp_max)}°C</p>
               <p>Temp Min: {TempConverter(data.main.temp_min)}°C</p>
-              <p>Umidade: {data.main.humidity}</p>
+              <p>Umidade: {data.main.humidity}%</p>
               <p>Clima: {data.weather[0].description}</p>
             </div>
           }
         </div>
       )}
+      <Search/>
     </div>
   );
 };
