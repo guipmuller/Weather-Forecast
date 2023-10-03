@@ -1,7 +1,8 @@
 import { useState } from "react";
 import APIKey from "../../helpers/APIKey";
+import { Search } from "react-bootstrap-icons";
 
-const Search = () => {
+const SearchBar = () => {
   const [data, setData] = useState(null);
   const [input, setInput] = useState("");
 
@@ -24,28 +25,39 @@ const Search = () => {
     fetchData(value);
   };
 
+  const searchClickHandler = () => {
+    // if (data && data[0]){
+    //   setLat(data[0].lat);
+    //   setLon(data[0].lon);
+    //   return {lat: setLat, lon: setLon};
+    // }
+  }
+
   return (
     <div>
-      <label htmlFor="name">Name: </label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        value={input}
-        onChange={(e) => changeHandler(e.target.value)}
-        required
-      />
+      <form action="submit">
+        <label htmlFor="name">Name: </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={input}
+          onChange={(e) => changeHandler(e.target.value)}
+          required
+        />
+        <button onClick={searchClickHandler}>
+          <Search />
+        </button>
+      </form>
       {data && data[0] && (
         <div>
           <p>
             {data[0].name}, {data[0].country}
           </p>
-          <p>{data[0].lat}</p>
-          <p>{data[0].lon}</p>
         </div>
       )}
     </div>
   );
 };
 
-export default Search;
+export default SearchBar;

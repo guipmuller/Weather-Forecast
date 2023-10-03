@@ -3,7 +3,7 @@ import useFetch from "../../hooks/useFetch";
 import useFetchName from "../../hooks/useFetchName";
 // Components
 import Hourly from "../../components/hourly/Hourly";
-import Search from "../../components/search/Search";
+import SearchBar from "../../components/search/SearchBar";
 
 const Home = () => {
   const { data, loading, error } = useFetch();
@@ -29,6 +29,7 @@ const Home = () => {
               <p>Temp Min: {data.daily[0].temp.min}°C</p>
               <p>Umidade: {data.current.humidity}%</p>
               <p>Clima: {data.current.weather[0].description}</p>
+              <SearchBar />
             </div>
           }
         </div>
