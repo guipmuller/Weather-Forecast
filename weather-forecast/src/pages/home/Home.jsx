@@ -3,6 +3,7 @@ import useFetch from "../../hooks/useFetch";
 import useFetchName from "../../hooks/useFetchName";
 // Components
 import Hourly from "../../components/hourly/Hourly";
+import Search from "../../components/search/Search";
 
 const Home = () => {
   const { data, loading, error } = useFetch();
